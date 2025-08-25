@@ -580,7 +580,7 @@ header .mega-menu .menu-links li a span {
 .Features .box .text .title::before {
   content: '';
   width: 70%;
-  height: 7px;
+  height: 5px;
   background-color: var(--box-color);
   position: absolute;
   bottom: -20px;
@@ -625,3 +625,51 @@ header .mega-menu .menu-links li a span {
 }
 /* #endregion Features */
 
+/* #region Testimonials  */
+.Testimonials {
+  padding: var(--main-margin) 0;
+  background-color: var(--main-section-background);
+}
+.Testimonials ul.reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 55px 35px;
+}
+.Testimonials ul.reviews > li {
+  background-color: white;
+  position: relative;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 7%);
+  border-radius: 5px;
+}
+.Testimonials ul.reviews > li img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(10%,-50%);
+  border-radius: 50%;
+  border: 10px solid var(--main-section-background);
+}
+.Testimonials ul.reviews > li .name {
+  font-size: 18px;
+}
+.Testimonials ul.reviews > li .job {
+  display: block;
+  color: var(--main-text-color);
+  margin: 10px 0;
+}
+.Testimonials ul.reviews > li ul.stars {
+  display: flex;
+  gap: 5px;
+}
+.Testimonials ul.reviews > li ul.stars li i.filled {
+  color: #ffc107;
+}
+.Testimonials ul.reviews > li p.review {
+  color: var(--main-text-color);
+  line-height: 1.5;
+  margin-top: 10px;
+}
+/* #endregion Testimonials */
