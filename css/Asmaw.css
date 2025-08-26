@@ -856,3 +856,52 @@ header .mega-menu .menu-links li a span {
   color: var(--main-color-alt);
 }
 /* #endregion Services */
+
+/* #region Our Skills */
+.Our-Skills {
+  padding: var(--main-margin) 0;
+  background-color: white;
+}
+.Our-Skills .container {
+  display: flex;
+}
+.Our-Skills .image {
+  flex: 4;
+}
+.Our-Skills .image img {
+  max-width: 100%;
+}
+.Our-Skills ul.skills {
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+  gap: 20px;
+}
+.Our-Skills ul.skills li h4 {
+  margin-bottom: 20px;
+}
+.Our-Skills ul.skills li progress {
+  height: 30px;
+  border-radius: 5px;
+  width: 100%;
+  position: relative;
+}
+.Our-Skills ul.skills li progress::-webkit-progress-bar {
+  background-color: #eee;
+}
+.Our-Skills ul.skills li progress::-webkit-progress-value {
+  background: var(--main-color); 
+}
+.Our-Skills ul.skills li progress::after {
+  content: attr(value) '%';
+  padding: 3px;
+  position: absolute;
+  right: 0;
+  top: -30px;
+  color: var(--main-color);
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: bold;
+}
+/* #endregion Our Skills */
