@@ -398,6 +398,7 @@ header .mega-menu .menu-links li a span {
 /* #region articles */
 .articles {
   padding: var(--main-margin) 0;
+  background-color: white;
 }
 .articles .articles-container {
   --main-section-padding: 20px;
@@ -517,6 +518,7 @@ header .mega-menu .menu-links li a span {
 /* #region Features */
 .Features {
   padding: var(--main-margin) 0;
+  background-color: white;
 }
 .Features .container {
   display: grid;
@@ -677,6 +679,7 @@ header .mega-menu .menu-links li a span {
 /* #region Team members */
 .Team-Members {
   padding: var(--main-margin) 0;
+  background-color: white;
 }
 .Team-Members ul.team {
   display: grid;
@@ -757,3 +760,99 @@ header .mega-menu .menu-links li a span {
 }
 
 /* #endregion Team members */
+
+/* #region Services */
+.Services {
+  padding: var(--main-margin) 0;
+  background-color: var(--main-section-background);
+}
+.Services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap:40px;
+  counter-reset: Services;
+}
+.Services .container .srv {
+  background-color: white;
+  box-shadow: 
+    0 12px 20px 0 rgb(0 0 0 / 13%), 
+    0 2px 4px 0 rgb(0 0 0 / 12%);
+  position: relative;
+  transition: var(--main-duration);
+}
+.Services .container .srv:hover {
+  transform: translateY(-10px);
+}
+.Services .container .srv::before {
+  content: '';
+  width: 0;
+  height: 3px;
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--main-color);
+  transition: var(--main-duration);
+}
+.Services .container .srv:hover::before {
+  width: 100%;
+}
+.Services .srv .info {
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Services .srv i {
+  color: #d5d5d5;
+  display: block;
+  width: fit-content;
+  margin: 30px auto;
+}
+.Services .srv .srv-name {
+  margin-bottom: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--main-color);
+  text-align: center;
+}
+.Services .srv .info span {
+  width: 50px;
+  height: 50px;
+  background-color: var(--main-color);
+  position: relative;
+}
+.Services .srv .info span::before {
+  content: '';
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  background-image: linear-gradient(
+    to right,
+    var(--main-color) 50%,
+    #d5d5d5 50%
+  );
+  transform: skew(-30deg);
+}
+.Services .srv .info span::after {
+  content: '0' counter(Services);
+  counter-increment: Services;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.Services .srv .info a {
+  color: var(--main-color);
+  margin-right: 20px;
+}
+.Services .srv .info a:hover {
+  color: var(--main-color-alt);
+}
+/* #endregion Services */
