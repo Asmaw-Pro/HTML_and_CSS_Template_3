@@ -683,7 +683,7 @@ header .mega-menu .menu-links li a span {
 }
 .Team-Members ul.team {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px 80px;
   padding-left: 50px;
 }
@@ -868,6 +868,11 @@ header .mega-menu .menu-links li a span {
 .Our-Skills .image {
   flex: 4;
 }
+@media (max-width: 991px) {
+  .Our-Skills .image {
+    display: none;
+  }
+}
 .Our-Skills .image img {
   max-width: 100%;
 }
@@ -905,3 +910,81 @@ header .mega-menu .menu-links li a span {
   font-weight: bold;
 }
 /* #endregion Our Skills */
+
+/* #region How It Works */
+.How-It-Works {
+  padding: var(--main-margin) 0;
+  background-color: var(--main-section-background);
+}
+.How-It-Works .container {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+.How-It-Works .container .image img {
+  max-width: 100%;
+}
+@media (max-width: 991px) {
+  .How-It-Works .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+}
+.How-It-Works .steps .step {
+  display: flex;
+  padding: 30px;
+  margin-bottom: 20px;
+  position: relative;
+  background-color: #f6f5f5;
+  border: 2px solid white;
+  border-radius: 6px;
+}
+@media (max-width: 991px) {
+  .How-It-Works .steps .step {
+    flex-direction: column;
+  }
+}
+.How-It-Works .steps .step::before {
+  content: '';
+  width: 0;
+  height: 0;
+  background-color: var(--main-section-background);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition: var(--main-duration);
+  z-index: 1;
+}
+.How-It-Works .steps .step:hover::before {
+  width: 100%;
+  height: 100%;
+}
+.How-It-Works .steps .step :where(img,.text) {
+  z-index: 2;
+}
+.How-It-Works .steps .step img {
+  max-width: 65px;
+  margin-right: 30px;
+  align-self: center;
+}
+@media (max-width: 991px) {
+  .How-It-Works .steps .step img {
+    margin: 0 auto 30px;
+  }
+  .How-It-Works .steps .step .text {
+    text-align: center;
+  }
+}
+.How-It-Works .steps .step .text .title {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+.How-It-Works .steps .step .text p {
+  color: var(--main-text-color);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* #endregion How It Works */
