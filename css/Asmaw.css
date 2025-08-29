@@ -71,6 +71,7 @@ ul {
   text-transform: uppercase;
   transition: var(--main-duration);
   z-index: 1;
+  cursor: default;
 }
 .special-title:hover {
   color: white;
@@ -138,6 +139,22 @@ ul {
 /* #endregion special-title animations */
 
 /* #endregion title */
+/* #region dots  */
+section:has(.dots) {
+  position: relative;
+}
+.dots {
+  position: absolute;
+}
+.dots.up {
+  top: 200px;
+  right: 0;
+}
+.dots.down {
+  bottom: 200px;
+  left: 0;
+}
+/* #endregion dots  */
 
 /* #endregion components */
 
@@ -321,8 +338,11 @@ header .mega-menu .menu-links li a span {
   align-items: center;
   padding-bottom: 100px;
 }
-.landing .image img {
+.landing .image {
   width: 600px;
+}
+.landing .image img {
+  max-width: 100%;
   animation: moveUpAndDown 3s linear infinite alternate;
 }
 @media (max-width: 991px) {
@@ -990,26 +1010,14 @@ header .mega-menu .menu-links li a span {
 
 /* #endregion How It Works */
 
-/* #region Latest Events */xs`
+/* #region Latest Events */
 .Events {
   padding: var(--main-margin) 0;
   background-color: white ;
-  position: relative;
 }
 .Events .container {
   display: flex;
   flex-wrap: wrap;
-}
-.Events .container .dots {
-  position: absolute;
-}
-.Events .container .dots.up {
-  top: 200px;
-  right: 0;
-}
-.Events .container .dots.down {
-  bottom: 200px;
-  left: 0;
 }
 .Events .container .image {
   max-width: 450px;
@@ -1086,6 +1094,7 @@ header .mega-menu .menu-links li a span {
   border-radius: 50px;
   display: flex;
   gap: 20px;
+  position: relative;
 }
 @media (max-width: 767px) {
   .Events .subscribe form {
@@ -1122,3 +1131,152 @@ header .mega-menu .menu-links li a span {
   background-color: var(--main-color-alt);
 } 
 /* #endregion Latest Events */
+
+/* #region Pricing Plans */
+.Pricing-Plans {
+  padding: var(--main-margin) 0;
+  background-color: var(--main-section-background);
+}
+.Pricing-Plans .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.Pricing-Plans .plan {
+  background-color:white;
+  box-shadow: 
+    0 12px 20px 0 rgb(0 0 0 / 13%), 
+    0 2px 4px 0 rgb(0 0 0 / 12%);
+  position: relative;
+}
+.Pricing-Plans .plan::after,
+.Pricing-Plans .plan::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 50%;
+  background-color: #f6f6f6;
+  transition: var(--main-duration);
+}
+.Pricing-Plans .plan:hover::after,
+.Pricing-Plans .plan:hover::before {
+  width: 100%;
+}
+.Pricing-Plans .plan * {
+  z-index: 1;
+}
+.Pricing-Plans .plan::before {
+  top: 0;
+  left: 0;
+}
+.Pricing-Plans .plan::after {
+  top: 50%;
+  right: 0;
+}
+.Pricing-Plans .plan.Popular {
+  position: relative;
+}
+@media (min-width: 1200px) {
+  .Pricing-Plans .plan.Popular {
+    top: -30px;
+  }
+}
+.Pricing-Plans .plan.Popular label {
+  background-color: var(--main-color);
+  color: white;
+  display: block;
+  font-weight: bold;
+  transform: rotate(90deg);
+  width: fit-content;
+  padding: 10px;
+  position: absolute;
+  right: -15px;
+  top: 37px;
+  cursor: vertical-text;
+  z-index: 1;
+}
+.Pricing-Plans .plan.Popular label::after, 
+.Pricing-Plans .plan.Popular label::before {
+  content: '';
+  width: 90%;
+  height: 100%;
+  background-color: inherit;
+  position: absolute;
+  z-index: -1;
+  right: -8px;
+  top: 0px;
+}
+.Pricing-Plans .plan.Popular label::after {
+  transform: skew(45deg);
+}
+.Pricing-Plans .plan.Popular label::before {
+  transform: skew(-45deg);
+}
+.Pricing-Plans .plan .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Pricing-Plans .plan .info .name {
+  font-size: 25px;
+  letter-spacing: -1px;
+  font-weight: bold;
+  margin: 30px 0;
+}
+.Pricing-Plans .plan .info img {
+  width: 80px;
+  margin-bottom: 30px;
+}
+.Pricing-Plans .plan .info .amount {
+  font-size: 60px;
+  font-weight: bold;
+  color: var(--main-color);
+}
+.Pricing-Plans .plan .info .time {
+  color: var(--main-text-color);
+  margin: 7px 0 20px;
+}
+.Pricing-Plans .plan .features li {
+  padding: 15px;
+  border-top: 1px solid #eee;
+  position: relative;
+}
+.Pricing-Plans .plan .features li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
+  margin-right: 10px;
+  font-weight: bold;
+  color: var(--main-color);
+  font-size: 20px;
+}
+.Pricing-Plans .plan a {
+  width: fit-content;
+  padding: 15px 20px;
+  margin: 40px auto;
+  display: block;
+  border: 2px solid var(--main-color);
+  border-radius: 6px;
+  color: var(--main-color);
+  font-weight: bold;
+  transition: var(--main-duration);
+  position: relative;
+  z-index: 1;
+}
+.Pricing-Plans .plan a:hover {
+  color: white;
+}
+.Pricing-Plans .plan a::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: var(--main-duration);
+  z-index: -1;
+}
+.Pricing-Plans .plan a:hover::after {
+  background-color: var(--main-color);  
+}
+
+/* #endregion Pricing Plans */
