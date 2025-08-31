@@ -1428,6 +1428,11 @@ header .mega-menu .menu-links li a span {
   justify-content: center;
   align-items: center;
 }
+@media (max-width:991px) {
+  .discount > div {
+    flex-basis: 100%;
+  }
+}
 .discount div h3 {
   margin: 35px 0;
   font-size: 40px;
